@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+body{
+  font-family: var(--font-inter-sans);
+}
+
+h1{
+  @apply text-[3rem] font-normal tracking-[-.1rem] leading-[1.2]
+}
+
+p{
+  @apply font-normal text-[.85rem];
+  font-family: var(--font-geist-mono);
+}
+
+img{
+  @apply size-full object-cover
+}
+
+nav{
+  @apply fixed top-0 w-full flex justify-between items-center p-[2rem] z-20
+}
+
+nav p{
+  @apply uppercase text-[.75rem] text-white
+}
+
+nav .logo{
+  @apply border border-[rgba(255,255,255,0.1)] rounded-[.25rem] bg-[rgba(0,0,0,.5)] backdrop-blur-[20px]  p-[.5rem_1rem] overflow-hidden
+}
+
+
+section{
+  @apply relative w-full h-svh overflow-hidden
+}
+
+.intro, .outro{
+  @apply p-[2rem] items-center flex bg-[#0f0f0f] text-white
+}
+
+.intro h1{
+  @apply w-1/2 m-[0_auto] text-center
+}
+
+.slider-images{
+  @apply absolute size-full
+}
+
+.slider-images::after{
+  @apply content-[''] absolute top-0 left-0 size-full bg-[rgba(0,0,0,.35)]
+}
+
+.slider-images img{
+  @apply absolute size-full origin-center will-change-transform;
+}
+
+
+.slider-title{
+  @apply absolute top-1/2 left-[2rem] -translate-y-1/2 w-1/2 text-white
+}
+
+.slider-indicator{
+  @apply absolute top-1/2 right-[2rem] -translate-y-1/2
+}
+
+.slider-indices{
+  @apply flex flex-col gap-[1rem] p-[1rem_1.25rem]
+}
+
+.slider-indices p{
+  @apply  flex items-center gap-[1rem] text-white
+}
+
+.index{
+  @apply relative w-[1.25rem] flex justify-end will-change-[opacity]
+}
+.marker{
+  @apply relative w-[.75rem] h-px bg-white origin-right will-change-transform scale-x-0
+}
+
+.slider-progress-bar{
+  @apply absolute top-0 right-0 w-px h-full bg-[rgba(255,255,255,.35)]
+}
+
+.slider-progress{
+  @apply absolute top-0 left-1/2 translate-x-0 scale-y-0 w-[3px] h-full bg-white origin-top will-change-transform
+}
+
+.line{
+  @apply relative block will-change-transform
+}
+
+@media (max-width:1000px) {
+  h1{
+    @apply text-[2rem] tracking-normal
+  }
+
+  nav{
+    @apply hidden
+  }
+
+  .intro h1, .outro h1{
+    @apply w-full
+  }
+
+  .slider-title{
+    @apply top-[5rem] left-0 transform-none w-full p-[2rem]
+  }
+
+  .slider-indicator{
+    @apply top-[unset] transform-none bottom-[2rem]
+  }
+}
